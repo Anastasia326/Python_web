@@ -28,6 +28,19 @@
                     <label for="city">City</label>
                     {{ form.name }}
                     <input type="submit" name="send" value="Find" class="mt-2 btn btn-primary">
+                    <p>
+                    <div class="alert alert-info">
+                       <div class ="row">
+                         <div class="col-9">
+                            <b>City: </b>{{ now_value.city }}<br>
+                            <b>Temperature: </b>{{ now_value.temp }}<sup>o</sup><br>
+                            <b>Humidity: </b>{{ now_value.humidity }}%
+                          </div>
+                          <div class="col-2 offset-1">
+                              <imp src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="Фото погоды" class="img-thumbnail">
+                           </div>
+                         </div>
+                       </div>
                 </form>
             </div>
 

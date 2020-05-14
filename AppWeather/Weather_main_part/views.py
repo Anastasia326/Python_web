@@ -19,4 +19,5 @@ def index(request):
 
     context = get_something(url, form)
 
+
     return render(request, 'weather_/index.html', context)

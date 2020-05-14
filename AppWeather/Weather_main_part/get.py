@@ -4,7 +4,7 @@ from .models import City
 from .forms import CityForm
 
 def get_something(url, form):
-    cities = City.objects.all()
+    cities = City.objects.all()[::-1]
 
     all_cities = []
 
@@ -22,5 +22,5 @@ def get_something(url, form):
         except:
             pass
 
-    context = {'all_info': all_cities, 'form': form}
+    context = {'all_info': all_cities, 'form': form, 'now_value': all_cities[0]}
     return context
