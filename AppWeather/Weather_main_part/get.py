@@ -22,5 +22,5 @@ def get_something(url, form):
         except:
             pass
 
-    context = {'all_info': all_cities, 'form': form, 'now_value': all_cities[0]}
+    context = {'all_info': all_cities, 'form': form, 'now_value': all_cities[0], 'size': len(all_cities)}
     return context

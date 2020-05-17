@@ -1,8 +1,12 @@
 import requests
 from django.shortcuts import render
+from django.http import HttpResponse
+from django.http import HttpResponseNotFound
+from django.shortcuts import render
 from .models import City
 from .forms import CityForm
 from .get import get_something
+
 
 def index(request):
     appid = '60762f39833d5027ecddd7ce126a7ee6'
@@ -19,5 +23,10 @@ def index(request):
 
     context = get_something(url, form)
 
-
     return render(request, 'weather_/index.html', context)
+
+
+def delete(request, id):
+    form = City.objects.get(id=id)
+    form.delete()
+    return redirect("/")
