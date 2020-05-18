@@ -15,6 +15,7 @@ def get_something(url, form):
                 'city': city.name,
                 'temp': res["main"]["temp"],
                 'humidity': res["main"]["humidity"],
+                'id':city.id,
                 'icon': res["weather"][0]["icon"]
             }
 

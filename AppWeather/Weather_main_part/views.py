@@ -1,6 +1,6 @@
 import requests
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponseRedirect
 from django.http import HttpResponseNotFound
 from django.shortcuts import render
 from .models import City
@@ -26,7 +26,7 @@ def index(request):
     return render(request, 'weather_/index.html', context)
 
 
-def delete(request, id):
-    form = City.objects.get(id=id)
+def delete_city(request, id):
+    form =get_object_or_404(City, pk=id)
     form.delete()
-    return redirect("/")
+    return HttpResponseRedirect("/")
